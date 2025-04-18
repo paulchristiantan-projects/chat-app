@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Loader Screen -->
+  <div id="loader" class="loader-screen">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="container">
+    <!-- Authentication Section -->
+    <div id="auth-section" class="hidden">
+      <!-- Sign Up Form -->
+      <form id="signup-form" class="auth-form hidden">
+        <h2>Sign Up</h2>
+        <input type="text" id="signup-name" placeholder="Your Name" required>
+        <input type="email" id="signup-email" placeholder="Email" required>
+        <input type="password" id="signup-password" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <a href="#" id="go-to-login">Login</a></p>
+      </form>
+
+      <!-- Login Form -->
+      <form id="login-form" class="auth-form">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Email" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="#" id="go-to-signup">Sign Up</a></p>
+      </form>
+    </div>
+
+    <!-- Chat Section -->
+    <div id="chat-section" class="hidden">
+      <!-- Chat Header -->
+      <div class="chat-header">
+        <span>Welcome, <span id="user-name"></span>!</span>
+        <button id="logout-btn">Logout</button>
+      </div>
+
+      <!-- Messages -->
+      <div id="messages"></div>
+
+      <!-- Chat Input -->
+      <form id="chat-form">
+        <input type="text" id="message-input" placeholder="Type a message" required>
+        <button type="submit">&#10148;</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal for Success -->
+  <div id="success-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Account Created!</h3>
+      <p>Your account has been created successfully. Redirecting to chat...</p>
+      <button id="close-modal">OK</button>
+    </div>
+  </div>
+
+  <!-- Firebase SDK Scripts -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
